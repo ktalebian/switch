@@ -7,11 +7,11 @@
   },
   "license": "ISC",
   "author": "Kousha Talebian <k@ousha.me>",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
     "build"
   ],
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
   "scripts": {
     "prebuild": "rm -rf build",
     "build": "tsc",
@@ -19,6 +19,8 @@
     "lint": "eslint --ext ts src/",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install",
+    "prepublish:public": "npm run build",
+    "publish:public": "npm publish --access public",
     "test": "jest",
     "test:watch": "jest --watch"
   },
